@@ -61,7 +61,7 @@ to the Australian Bureau of Statistics 2021 coastline.
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
 | `qld_ddmg_boundaries_gda2020_simp20` | 23 | 643 KB | 154 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp20` | 78 | 1542 KB | 348 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp20` | 78 | 1595 KB | 357 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Disaster Management Regions
 
@@ -82,7 +82,7 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 | `qld_central_ddmg_boundaries_gda2020_simp20` | 4 | 161 KB | 48 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_central_ldmg_boundaries_gda2020_simp20` | 14 | 317 KB | 83 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_far_north_ddmg_boundaries_gda2020_simp20` | 3 | 120 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp20` | 21 | 550 KB | 140 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp20` | 21 | 603 KB | 151 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_north_coast_ddmg_boundaries_gda2020_simp20` | 4 | 80 KB | 28 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_north_coast_ldmg_boundaries_gda2020_simp20` | 8 | 139 KB | 44 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_northern_ddmg_boundaries_gda2020_simp20` | 2 | 76 KB | 32 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
