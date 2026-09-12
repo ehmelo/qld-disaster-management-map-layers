@@ -2,13 +2,13 @@
 
 Boundary files for Queensland's disaster management geography, prepared for the Power BI
 **Azure Maps** visual (GeoJSON reference layer) and the **Shape Map** visual (TopoJSON).
-Every layer is simplified, cleaned of hairline overlaps between neighbouring shapes, and
-served from GitHub Pages so it can be referenced by URL.
+Every layer is clipped to land, simplified, cleaned of overlaps between neighbouring shapes,
+and served from GitHub Pages so it can be referenced by URL.
 
 **Preview the layers:** https://ehmelo.github.io/qld-disaster-management-map-layers/
 
-Generated 2026-09-13. Layer metadata, including sources and licences per file, is in
-[`layers.json`](layers.json).
+Generated 13/09/2026. Layer metadata, including sources and
+licences per file, is in [`layers.json`](layers.json).
 
 ## What is in here
 
@@ -16,17 +16,17 @@ Queensland's disaster management arrangements run at three levels. This reposito
 boundaries for the two geographic ones, plus a reporting grouping and, for comparison, the
 Queensland Police Service's own operational boundaries.
 
-- **Disaster districts (DDMG)** — 23 districts, each coordinated by a District Disaster
+- **Disaster districts (DDMG)** - 23 districts, each coordinated by a District Disaster
   Management Group. The boundaries are the QPS Disaster Districts dataset.
-- **Local government areas (LDMG)** — 78 council polygons covered by the 77 Local Disaster
+- **Local government areas (LDMG)** - 78 council polygons covered by the 77 Local Disaster
   Management Groups. Torres Strait has two councils (Torres Shire and Torres Strait Island
   Regional) under one group name.
-- **Disaster Management Regions** — the 23 districts merged into 7 regions. This grouping is
+- **Disaster Management Regions** - the 23 districts merged into 7 regions. This grouping is
   a reporting convention used by the dashboards these files serve (see the table below).
-  **It is not the QPS operational region boundary.** The official QPS regions follow the
-  current 15 police districts and differ from this grouping in several places, most visibly
-  around Brisbane, Moreton and Gympie.
-- **QPS operational regions and districts** — the official Queensland Police Service
+  **It is not the QPS operational region boundary.** The official QPS regions carry the
+  same seven names but follow the current 15 police districts and differ from this grouping
+  in several places, most visibly around Brisbane, Moreton and Gympie.
+- **QPS operational regions and districts** - the official Queensland Police Service
   boundaries, included so that the difference is visible.
 
 ### Disaster Management Region grouping
@@ -45,22 +45,29 @@ Local government areas take the region of the disaster district they sit in.
 
 ## Layers
 
-All coordinates are longitude / latitude in degrees. `simp20` and `simp10` mean the shapes
-were simplified to 20 % or 10 % of the source vertex count, which is ample for statewide and
-regional maps and keeps files small. Coordinates are rounded to 5 decimal places (about 1 m).
+All coordinates are longitude / latitude in degrees. `simp200m` means the shapes were
+simplified with a 200 m tolerance (no point moved more than about 200 m), which is ample
+for statewide and regional maps and keeps files small; `simp10` means the official QPS
+layers were simplified to 10 % of their source vertex count. Coordinates are rounded to
+5 decimal places (about 1 m).
+
+The disaster district and council layers are clipped to the coastline using the Australian
+Bureau of Statistics 2021 local government area boundaries, because the Queensland
+Government source polygons extend into coastal waters (Torres Shire's source polygon is 55
+times its land area). Islands are kept.
 
 ### Statewide
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_ddmg_boundaries_gda2020_simp20` | 23 | 643 KB | 154 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp20` | 78 | 1415 KB | 322 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 620 KB | 184 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 1024 KB | 292 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Disaster Management Regions
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_dm_region_boundaries_gda2020_simp20` | 7 | 373 KB | 102 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
+| `qld_dm_region_boundaries_gda2020_simp200m` | 7 | 434 KB | 146 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
 
 ### Per region
 
@@ -70,20 +77,20 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_brisbane_ddmg_boundaries_gda2020_simp20` | 2 | 28 KB | 12 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_brisbane_ldmg_boundaries_gda2020_simp20` | 3 | 40 KB | 17 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ddmg_boundaries_gda2020_simp20` | 4 | 161 KB | 48 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp20` | 14 | 317 KB | 83 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ddmg_boundaries_gda2020_simp20` | 3 | 120 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp20` | 21 | 423 KB | 114 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ddmg_boundaries_gda2020_simp20` | 4 | 80 KB | 28 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp20` | 8 | 139 KB | 44 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ddmg_boundaries_gda2020_simp20` | 2 | 76 KB | 32 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp20` | 16 | 228 KB | 69 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ddmg_boundaries_gda2020_simp20` | 2 | 23 KB | 10 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ldmg_boundaries_gda2020_simp20` | 3 | 39 KB | 15 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ddmg_boundaries_gda2020_simp20` | 6 | 158 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ldmg_boundaries_gda2020_simp20` | 13 | 238 KB | 77 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ddmg_boundaries_gda2020_simp200m` | 2 | 26 KB | 13 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ldmg_boundaries_gda2020_simp200m` | 3 | 28 KB | 14 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 198 KB | 72 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 279 KB | 91 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 132 KB | 51 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 305 KB | 106 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 71 KB | 30 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 94 KB | 36 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 71 KB | 31 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 163 KB | 56 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 18 KB | 8 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 22 KB | 10 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 107 KB | 38 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 142 KB | 48 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Official QPS boundaries (for comparison)
 
@@ -94,13 +101,13 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 
 ## Using a layer in Power BI
 
-**Azure Maps visual.** Format pane → Reference layer → paste the GeoJSON URL
-(for example `https://ehmelo.github.io/qld-disaster-management-map-layers/layers/qld_ddmg_boundaries_gda2020_simp20.geojson`), or upload the file.
+**Azure Maps visual.** Format pane > Reference layer > paste the GeoJSON URL
+(for example `https://ehmelo.github.io/qld-disaster-management-map-layers/layers/qld_ddmg_boundaries_gda2020_simp200m.geojson`), or upload the file.
 Put the data column that matches the layer's *match field* in the **Location** well; values
 must match the property exactly, including case. Colour the shapes with a measure in the
 **Color** well or through conditional formatting on the polygon fill.
 
-**Shape Map visual.** Format pane → Map settings → Add map → choose the `.topojson` file.
+**Shape Map visual.** Format pane > Map settings > Add map > choose the `.topojson` file.
 Bind the matching column to **Location**.
 
 Files are served with permissive cross-origin headers, so a URL reference works from the
@@ -111,11 +118,12 @@ Power BI service as well as Desktop.
 | Dataset | Publisher | Licence | Dataset date |
 |---|---|---|---|
 | [QPS Disaster Districts](https://www.data.qld.gov.au/dataset/qps-disaster-districts) | Queensland Police Service, via the Queensland Government Open Data Portal | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 19/05/2025 |
-| [Local government area boundaries - Queensland](https://www.data.qld.gov.au/dataset/local-government-area-boundaries-queensland) | Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 10/09/2026 |
+| [Local government area boundaries - Queensland](https://www.data.qld.gov.au/dataset/local-government-area-boundaries-queensland) | Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | extract of 11/05/2026 |
+| [ASGS Edition 3 (2021) Local Government Areas](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files) - coastline clip only | Australian Bureau of Statistics | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 2021 |
 | [QPS Regions](https://www.data.qld.gov.au/dataset/qps-regions) | Queensland Police Service | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/au/) | 09/03/2022 |
 | [QPS Districts](https://www.data.qld.gov.au/dataset/qps-districts) | Queensland Police Service | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 09/03/2022 |
 
-The derived layers keep the licence of their source. Attribute the source dataset and
+The derived layers keep the licence of their sources. Attribute the source dataset and
 publisher when you reuse them; a link to this repository is welcome but not required.
 The viewer page and any code in this repository are under the MIT licence (`LICENSE`).
 
@@ -123,13 +131,12 @@ The viewer page and any code in this repository are under the MIT licence (`LICE
 
 - **Disaster Management Regions are a grouping, not a gazetted boundary.** Use the official
   QPS layers if you need police regions.
-- **Dataset dates.** The QPS Regions and Districts files are dated March 2022; the district
-  and local government layers are current as at the dates above. Check the source pages
-  before relying on any boundary for an operational decision.
+- **Dataset dates.** The QPS Regions and Districts files are dated March 2022; check the
+  source pages before relying on any boundary for an operational decision.
 - **Simplification.** Shapes are generalised. They are right for thematic maps at state and
-  regional scale, not for property-level work.
-- **Datums.** Disaster district and council layers are GDA2020; the QPS layers are GDA94.
-  The difference is under 2 m and irrelevant at these scales.
+  regional scale, not for property-level work. Islets smaller than the tolerance may drop out.
+- **Datums.** Disaster district and council layers are GDA2020 (transformed from the GDA94
+  source); the QPS layers are GDA94. The difference is under 2 m and irrelevant at these scales.
 
 ## Reporting a problem
 
