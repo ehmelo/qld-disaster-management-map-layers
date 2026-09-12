@@ -1,0 +1,708 @@
+{
+ "generated": "2026-09-13",
+ "layers": [
+  {
+   "id": "qld_ddmg_boundaries_gda2020_simp20",
+   "group": "statewide",
+   "title": "Queensland disaster districts (DDMG)",
+   "description": "The 23 disaster districts, each coordinated by a District Disaster Management Group. Simplified to 20% of the source vertices, sliver-cleaned.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 643,
+   "topojson_kb": 154,
+   "features": 23,
+   "vertices": 30088,
+   "bbox": [
+    137.99465,
+    -29.17927,
+    153.55194,
+    -9.08815
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name"
+   ]
+  },
+  {
+   "id": "qld_ldmg_boundaries_gda2020_simp20",
+   "group": "statewide",
+   "title": "Queensland local government areas (LDMG)",
+   "description": "The 78 local government area polygons covered by the 77 Local Disaster Management Groups (Torres Strait carries two councils under one group). Simplified to 20% of the source vertices, sliver-cleaned.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 1415,
+   "topojson_kb": 322,
+   "features": 78,
+   "vertices": 65771,
+   "bbox": [
+    137.99465,
+    -29.17925,
+    153.55195,
+    -9.08813
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name"
+   ]
+  },
+  {
+   "id": "qld_dm_region_boundaries_gda2020_simp20",
+   "group": "region",
+   "title": "Disaster Management Regions",
+   "description": "The 23 disaster districts merged into the 7 Disaster Management Regions they report to. Disaster Management Region: the reporting grouping of disaster districts used by the consuming reports. Not the QPS operational region boundary - see qld_qps_regions_gda94_simp10.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service) (derived)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "Police Region Short Name",
+   "geojson": "layers/qld_dm_region_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_dm_region_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 373,
+   "topojson_kb": 102,
+   "features": 7,
+   "vertices": 17404,
+   "bbox": [
+    137.99465,
+    -29.17927,
+    153.55194,
+    -9.08815
+   ],
+   "properties": [
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name",
+    "DDMG Count",
+    "DDMG Names",
+    "Note"
+   ]
+  },
+  {
+   "id": "qld_brisbane_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Brisbane Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the Brisbane Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_brisbane_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_brisbane_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 28,
+   "topojson_kb": 12,
+   "features": 2,
+   "vertices": 1294,
+   "bbox": [
+    152.65126,
+    -27.74362,
+    153.54641,
+    -26.79236
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_brisbane_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Brisbane Region - local government areas (LDMG)",
+   "description": "Local government areas in the Brisbane Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_brisbane_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_brisbane_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 40,
+   "topojson_kb": 17,
+   "features": 3,
+   "vertices": 1813,
+   "bbox": [
+    152.65127,
+    -27.74375,
+    153.54637,
+    -26.79235
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_central_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Central Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the Central Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_central_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_central_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 161,
+   "topojson_kb": 48,
+   "features": 4,
+   "vertices": 7517,
+   "bbox": [
+    140.67788,
+    -26.92687,
+    153.22556,
+    -19.69761
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_central_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Central Region - local government areas (LDMG)",
+   "description": "Local government areas in the Central Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_central_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_central_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 317,
+   "topojson_kb": 83,
+   "features": 14,
+   "vertices": 14710,
+   "bbox": [
+    140.67789,
+    -26.92686,
+    153.22556,
+    -19.69759
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_far_north_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Far Northern Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the Far Northern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_far_north_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_far_north_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 120,
+   "topojson_kb": 39,
+   "features": 3,
+   "vertices": 5634,
+   "bbox": [
+    140.99558,
+    -19.69645,
+    147.5994,
+    -9.08815
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_far_north_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Far Northern Region - local government areas (LDMG)",
+   "description": "Local government areas in the Far Northern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_far_north_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_far_north_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 423,
+   "topojson_kb": 114,
+   "features": 21,
+   "vertices": 19597,
+   "bbox": [
+    141.00112,
+    -19.69644,
+    147.59941,
+    -9.08813
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_north_coast_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "North Coast Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the North Coast Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_north_coast_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_north_coast_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 80,
+   "topojson_kb": 28,
+   "features": 4,
+   "vertices": 3700,
+   "bbox": [
+    150.36912,
+    -26.98479,
+    153.36034,
+    -24.39208
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_north_coast_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "North Coast Region - local government areas (LDMG)",
+   "description": "Local government areas in the North Coast Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_north_coast_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_north_coast_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 139,
+   "topojson_kb": 44,
+   "features": 8,
+   "vertices": 6395,
+   "bbox": [
+    150.36913,
+    -26.98477,
+    153.36034,
+    -24.39207
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_northern_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Northern Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the Northern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_northern_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_northern_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 76,
+   "topojson_kb": 32,
+   "features": 2,
+   "vertices": 3553,
+   "bbox": [
+    137.99465,
+    -25.99686,
+    150.00516,
+    -15.00898
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_northern_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Northern Region - local government areas (LDMG)",
+   "description": "Local government areas in the Northern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_northern_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_northern_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 228,
+   "topojson_kb": 69,
+   "features": 16,
+   "vertices": 10473,
+   "bbox": [
+    137.99465,
+    -25.99685,
+    150.00517,
+    -15.00897
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_south_east_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "South Eastern Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the South Eastern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_south_east_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_south_east_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 23,
+   "topojson_kb": 10,
+   "features": 2,
+   "vertices": 1040,
+   "bbox": [
+    152.37491,
+    -28.36388,
+    153.55194,
+    -27.58722
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_south_east_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "South Eastern Region - local government areas (LDMG)",
+   "description": "Local government areas in the South Eastern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_south_east_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_south_east_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 39,
+   "topojson_kb": 15,
+   "features": 3,
+   "vertices": 1773,
+   "bbox": [
+    152.37501,
+    -28.36387,
+    153.55195,
+    -27.58721
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_southern_ddmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Southern Region - disaster districts (DDMG)",
+   "description": "Disaster districts in the Southern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "DDMG Name",
+   "geojson": "layers/qld_southern_ddmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_southern_ddmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 158,
+   "topojson_kb": 55,
+   "features": 6,
+   "vertices": 7350,
+   "bbox": [
+    140.99927,
+    -29.17927,
+    152.94088,
+    -24.64896
+   ],
+   "properties": [
+    "District Name",
+    "DDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_southern_ldmg_boundaries_gda2020_simp20",
+   "group": "per-region",
+   "title": "Southern Region - local government areas (LDMG)",
+   "description": "Local government areas in the Southern Region Disaster Management Region. Subset of the statewide layer.",
+   "source": "Local government area boundaries - Queensland, data.qld.gov.au (Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development)",
+   "licence": "CC BY 4.0",
+   "crs": "GDA2020 (EPSG:7844)",
+   "match_field": "LDMG Name",
+   "geojson": "layers/qld_southern_ldmg_boundaries_gda2020_simp20.geojson",
+   "topojson": "layers/qld_southern_ldmg_boundaries_gda2020_simp20.topojson",
+   "geojson_kb": 238,
+   "topojson_kb": 77,
+   "features": 13,
+   "vertices": 11010,
+   "bbox": [
+    140.99927,
+    -29.17925,
+    152.94089,
+    -24.63593
+   ],
+   "properties": [
+    "LGA Code",
+    "Abbreviated Name",
+    "LGA Name",
+    "Area Sq Km",
+    "LDMG Name",
+    "Police Region Name",
+    "Police Region Code",
+    "Police Region Short Name"
+   ]
+  },
+  {
+   "id": "qld_qps_regions_gda94_simp10",
+   "group": "official",
+   "title": "QPS operational regions (official)",
+   "description": "The 7 Queensland Police Service regions as published by QPS. Simplified to 10% of the source vertices. Differs from the Disaster Management Regions above.",
+   "source": "QPS Regions, data.qld.gov.au (Queensland Police Service), dataset dated 09/03/2022",
+   "licence": "CC BY 3.0",
+   "crs": "GDA94 (EPSG:4283)",
+   "match_field": "QPS Region",
+   "geojson": "layers/qld_qps_regions_gda94_simp10.geojson",
+   "topojson": "layers/qld_qps_regions_gda94_simp10.topojson",
+   "geojson_kb": 142,
+   "topojson_kb": 42,
+   "features": 7,
+   "vertices": 6652,
+   "bbox": [
+    137.99465,
+    -29.17924,
+    153.55404,
+    -9.18796
+   ],
+   "properties": [
+    "QPS Region"
+   ]
+  },
+  {
+   "id": "qld_qps_districts_gda94_simp10",
+   "group": "official",
+   "title": "QPS operational districts (official)",
+   "description": "The 15 Queensland Police Service districts as published by QPS. Simplified to 10% of the source vertices.",
+   "source": "QPS Districts, data.qld.gov.au (Queensland Police Service), dataset dated 09/03/2022",
+   "licence": "CC BY 4.0",
+   "crs": "GDA94 (EPSG:4283)",
+   "match_field": "QPS District",
+   "geojson": "layers/qld_qps_districts_gda94_simp10.geojson",
+   "topojson": "layers/qld_qps_districts_gda94_simp10.topojson",
+   "geojson_kb": 204,
+   "topojson_kb": 57,
+   "features": 15,
+   "vertices": 9489,
+   "bbox": [
+    137.99465,
+    -29.17924,
+    153.55404,
+    -9.18796
+   ],
+   "properties": [
+    "QPS District",
+    "District Id"
+   ]
+  }
+ ],
+ "grouping": [
+  {
+   "ddmg": "Brisbane",
+   "region": "Brisbane Region",
+   "code": "BR",
+   "short": "Brisbane"
+  },
+  {
+   "ddmg": "Bundaberg",
+   "region": "North Coast Region",
+   "code": "NCR",
+   "short": "North Coast"
+  },
+  {
+   "ddmg": "Cairns",
+   "region": "Far Northern Region",
+   "code": "FNR",
+   "short": "Far North"
+  },
+  {
+   "ddmg": "Charleville",
+   "region": "Southern Region",
+   "code": "SR",
+   "short": "Southern"
+  },
+  {
+   "ddmg": "Dalby",
+   "region": "Southern Region",
+   "code": "SR",
+   "short": "Southern"
+  },
+  {
+   "ddmg": "Gladstone",
+   "region": "Central Region",
+   "code": "CR",
+   "short": "Central"
+  },
+  {
+   "ddmg": "Gold Coast",
+   "region": "South Eastern Region",
+   "code": "SER",
+   "short": "South East"
+  },
+  {
+   "ddmg": "Gympie",
+   "region": "North Coast Region",
+   "code": "NCR",
+   "short": "North Coast"
+  },
+  {
+   "ddmg": "Innisfail",
+   "region": "Far Northern Region",
+   "code": "FNR",
+   "short": "Far North"
+  },
+  {
+   "ddmg": "Ipswich",
+   "region": "Southern Region",
+   "code": "SR",
+   "short": "Southern"
+  },
+  {
+   "ddmg": "Logan",
+   "region": "South Eastern Region",
+   "code": "SER",
+   "short": "South East"
+  },
+  {
+   "ddmg": "Longreach",
+   "region": "Central Region",
+   "code": "CR",
+   "short": "Central"
+  },
+  {
+   "ddmg": "Mackay",
+   "region": "Central Region",
+   "code": "CR",
+   "short": "Central"
+  },
+  {
+   "ddmg": "Mareeba",
+   "region": "Far Northern Region",
+   "code": "FNR",
+   "short": "Far North"
+  },
+  {
+   "ddmg": "Maryborough",
+   "region": "North Coast Region",
+   "code": "NCR",
+   "short": "North Coast"
+  },
+  {
+   "ddmg": "Moreton",
+   "region": "Brisbane Region",
+   "code": "BR",
+   "short": "Brisbane"
+  },
+  {
+   "ddmg": "Mount Isa",
+   "region": "Northern Region",
+   "code": "NR",
+   "short": "Northern"
+  },
+  {
+   "ddmg": "Rockhampton",
+   "region": "Central Region",
+   "code": "CR",
+   "short": "Central"
+  },
+  {
+   "ddmg": "Roma",
+   "region": "Southern Region",
+   "code": "SR",
+   "short": "Southern"
+  },
+  {
+   "ddmg": "Sunshine Coast",
+   "region": "North Coast Region",
+   "code": "NCR",
+   "short": "North Coast"
+  },
+  {
+   "ddmg": "Toowoomba",
+   "region": "Southern Region",
+   "code": "SR",
+   "short": "Southern"
+  },
+  {
+   "ddmg": "Townsville",
+   "region": "Northern Region",
+   "code": "NR",
+   "short": "Northern"
+  },
+  {
+   "ddmg": "Warwick",
+   "region": "Southern Region",
+   "code": "SR",
+   "short": "Southern"
+  }
+ ]
+}

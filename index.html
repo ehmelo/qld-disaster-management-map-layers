@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queensland disaster management map layers</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root { --ink: #1f2933; --muted: #52606d; --line: #d9e2ec; --paper: #ffffff; --accent: #1f6feb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--paper); }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  header h1 { margin: 0 0 4px; font-size: 18px; }
+  header p { margin: 0; color: var(--muted); }
+  header a { color: var(--accent); }
+  main { display: grid; grid-template-columns: 380px 1fr; height: calc(100vh - 74px); }
+  nav { overflow-y: auto; border-right: 1px solid var(--line); padding: 10px 0; }
+  nav h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 14px 16px 4px; }
+  nav button { display: block; width: 100%; text-align: left; background: none; border: 0; border-left: 3px solid transparent; padding: 7px 16px; cursor: pointer; font: inherit; color: var(--ink); }
+  nav button:hover { background: #f5f7fa; }
+  nav button.active { border-left-color: var(--accent); background: #eef4ff; }
+  nav button small { display: block; color: var(--muted); }
+  #map { height: 100%; }
+  #info { position: absolute; right: 12px; top: 86px; z-index: 1000; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; max-width: 340px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+  #info h3 { margin: 0 0 6px; font-size: 14px; }
+  #info p { margin: 0 0 6px; color: var(--muted); }
+  #info a { color: var(--accent); margin-right: 10px; }
+  #info table { border-collapse: collapse; margin-top: 6px; }
+  #info td { padding: 1px 6px 1px 0; vertical-align: top; }
+  #info td:first-child { color: var(--muted); white-space: nowrap; }
+  .leaflet-tooltip { font-size: 12px; }
+  @media (max-width: 800px) { main { grid-template-columns: 1fr; grid-template-rows: 40vh 1fr; } nav { border-right: 0; border-bottom: 1px solid var(--line); } #info { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Queensland disaster management map layers</h1>
+  <p>Boundary files for Power BI Azure Maps and Shape Map visuals. Pick a layer to preview it; hover a shape for its properties. Sources, licences and caveats: <a href="https://github.com/ehmelo/qld-disaster-management-map-layers#readme">readme</a>.</p>
+</header>
+<main>
+  <nav id="nav"></nav>
+  <div id="map"></div>
+</main>
+<div id="info" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(async function () {
+  const map = L.map('map', { preferCanvas: true }).setView([-22.5, 145], 5);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  const palette = ['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf'];
+  const groups = { statewide: 'Statewide', region: 'Disaster Management Regions', 'per-region': 'Per region', official: 'Official QPS boundaries (for comparison)' };
+
+  const catalogue = await fetch('layers.json').then(r => r.json());
+  const nav = document.getElementById('nav');
+  const info = document.getElementById('info');
+  let current = null, currentBtn = null;
+
+  for (const [key, title] of Object.entries(groups)) {
+    const items = catalogue.layers.filter(l => l.group === key);
+    if (!items.length) continue;
+    const h = document.createElement('h2'); h.textContent = title; nav.appendChild(h);
+    for (const l of items) {
+      const b = document.createElement('button');
+      b.innerHTML = `${l.title}<small>${l.features} features · ${l.geojson_kb} KB GeoJSON · ${l.topojson_kb} KB TopoJSON</small>`;
+      b.onclick = () => show(l, b);
+      nav.appendChild(b);
+    }
+  }
+
+  async function show(l, btn) {
+    if (current) map.removeLayer(current);
+    if (currentBtn) currentBtn.classList.remove('active');
+    btn.classList.add('active'); currentBtn = btn;
+    const data = await fetch(l.geojson).then(r => r.json());
+    let i = 0;
+    current = L.geoJSON(data, {
+      style: () => ({ color: '#333', weight: 1, fillColor: palette[i++ % palette.length], fillOpacity: .45 }),
+      onEachFeature: (f, layer) => {
+        const rows = Object.entries(f.properties).filter(([k]) => k !== 'Note').map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>');
+        layer.bindTooltip(rows, { sticky: true });
+        layer.on('mouseover', () => layer.setStyle({ weight: 2.5, fillOpacity: .65 }));
+        layer.on('mouseout', () => current.resetStyle(layer));
+      }
+    }).addTo(map);
+    map.fitBounds(current.getBounds(), { padding: [20, 20] });
+    info.hidden = false;
+    info.innerHTML = `<h3>${l.title}</h3><p>${l.description}</p>
+      <a href="${l.geojson}" download>Download GeoJSON</a><a href="${l.topojson}" download>Download TopoJSON</a>
+      <table>
+        <tr><td>Match field</td><td><code>${l.match_field}</code></td></tr>
+        <tr><td>Coordinates</td><td>${l.crs}</td></tr>
+        <tr><td>Source</td><td>${l.source}</td></tr>
+        <tr><td>Licence</td><td>${l.licence}</td></tr>
+      </table>`;
+  }
+
+  const first = nav.querySelector('button');
+  if (first) first.click();
+})();
+</script>
+</body>
+</html>
