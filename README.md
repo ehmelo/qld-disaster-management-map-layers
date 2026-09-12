@@ -107,11 +107,15 @@ Put the data column that matches the layer's *match field* in the **Location** w
 must match the property exactly, including case. Colour the shapes with a measure in the
 **Color** well or through conditional formatting on the polygon fill.
 
-**Shape Map visual.** Format pane > Map settings > Add map > choose the `.topojson` file.
-Bind the matching column to **Location**.
+**Shape Map visual.** Format pane > Map settings > Type > **URL**, then paste the TopoJSON
+or GeoJSON URL, or press **Fx** and point it at a measure that returns the URL. The measure
+route lets one visual switch maps with the report's filters, for example loading the
+per-region council file for whichever Disaster Management Region is selected. Uploading the
+`.topojson` file also works. Bind the matching column to **Location**.
 
 Files are served with permissive cross-origin headers, so a URL reference works from the
-Power BI service as well as Desktop.
+Power BI service as well as Desktop. The layer URLs are stable; the viewer page has a
+copy button beside each layer.
 
 ## Sources and licences
 

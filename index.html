@@ -25,6 +25,8 @@
   #info h3 { margin: 0 0 6px; font-size: 14px; }
   #info p { margin: 0 0 6px; color: var(--muted); }
   #info a { color: var(--accent); margin-right: 10px; }
+  #info button { font: inherit; font-size: 12px; padding: 2px 8px; margin-right: 6px; border: 1px solid var(--line); border-radius: 4px; background: #f5f7fa; cursor: pointer; }
+  #info .url { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11px; color: var(--muted); word-break: break-all; margin: 6px 0; }
   #info table { border-collapse: collapse; margin-top: 6px; }
   #info td { padding: 1px 6px 1px 0; vertical-align: top; }
   #info td:first-child { color: var(--muted); white-space: nowrap; }
@@ -57,6 +59,7 @@
   const nav = document.getElementById('nav');
   const info = document.getElementById('info');
   let current = null, currentBtn = null;
+  const abs = p => new URL(p, location.href).href;
 
   for (const [key, title] of Object.entries(groups)) {
     const items = catalogue.layers.filter(l => l.group === key);
@@ -89,6 +92,9 @@
     info.hidden = false;
     info.innerHTML = `<h3>${l.title}</h3><p>${l.description}</p>
       <a href="${l.geojson}" download>Download GeoJSON</a><a href="${l.topojson}" download>Download TopoJSON</a>
+      <div class="url">${abs(l.geojson)}</div>
+      <button data-copy="${abs(l.geojson)}">Copy GeoJSON URL</button><button data-copy="${abs(l.topojson)}">Copy TopoJSON URL</button>
+      <p style="margin-top:6px">Paste the URL into Azure Maps (Reference layer) or Shape Map (Map settings &gt; Type &gt; URL).</p>
       <table>
         <tr><td>Match field</td><td><code>${l.match_field}</code></td></tr>
         <tr><td>Coordinates</td><td>${l.crs}</td></tr>
@@ -97,6 +103,10 @@
       </table>`;
   }
 
+  info.addEventListener('click', e => {
+    const b = e.target.closest('button[data-copy]'); if (!b) return;
+    navigator.clipboard.writeText(b.dataset.copy).then(() => { const t = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = t, 1200); });
+  });
   const first = nav.querySelector('button');
   if (first) first.click();
 })();
