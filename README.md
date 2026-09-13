@@ -149,6 +149,12 @@ The viewer page and any code in this repository are under the MIT licence (`LICE
 - **Simplification.** Shapes are generalised to a 200 m tolerance and 11 m coordinate
   rounding. Right for thematic maps at state and regional scale; wrong for anything that needs
   a precise line, including whether a given address falls inside a boundary.
+- **Tolerances between shapes.** Within one layer, neighbouring shapes share their edges and
+  agree to within the coordinate rounding (about 11 m); residual overlaps from validity repair
+  total under 10 m² statewide. Between layers, district and council boundaries come from two
+  different government datasets and disagree by up to about 200 m in places (about 7 km² of
+  council area falls outside any district statewide). None of this is visible at the intended
+  scale; do not use these files to decide which side of a boundary a location falls on.
 - **Datums.** Disaster district and council layers are GDA2020; the QPS layers are GDA94.
   The difference is under 2 m and irrelevant at these scales.
 
