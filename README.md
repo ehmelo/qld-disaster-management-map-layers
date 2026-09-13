@@ -114,21 +114,22 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 Built for the Power BI Azure Maps visual, which cannot render a council enclosed by another
 council (the Cape York enclaves produced phantom triangles) and fills polygons at 50 % opacity
 with no control. In these files Cook Shire's coastal waters are assigned to the nearest council
-and small enclave fragments are merged into the council around them, so no council on Cape York
-is enclosed by another. **Indicative only**: boundaries at sea and on Cape York do not follow the
+and its islets follow the council whose waters they sit in; every other council keeps its source
+land. Cook Shire's holes fall from 31 to the 12 that other councils occupy, which the visual
+renders cleanly. **Indicative only**: boundaries at sea and on Cape York do not follow the
 source datasets. Use them for the Azure Maps council map and nothing else; every feature carries
 `Fidelity` = "schematic…" so the two kinds cannot be confused.
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_ldmg_boundaries_gda2020_simp200m_schematic` | 78 | 904 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_brisbane_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 19 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp200m_schematic` | 14 | 197 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp200m_schematic` | 21 | 296 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp200m_schematic` | 8 | 78 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp200m_schematic` | 16 | 154 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m_schematic` | 78 | 873 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 20 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m_schematic` | 14 | 201 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m_schematic` | 21 | 254 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m_schematic` | 8 | 79 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m_schematic` | 16 | 156 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_south_east_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 20 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ldmg_boundaries_gda2020_simp200m_schematic` | 13 | 142 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp200m_schematic` | 13 | 144 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Official QPS boundaries (for comparison)
 
@@ -220,7 +221,8 @@ statement and the per-feature `Modified` property are the change indication CC B
   GeoJSON files records the source datum for reference only: Power BI, Azure Maps and Leaflet
   ignore it and read the coordinates as WGS84, which is the same thing at this precision.
 - **Schematic layers are not boundaries.** The `…_schematic` council files reassign Cook Shire's
-  waters and merge enclave fragments for one renderer's sake; never read a boundary off them.
+  waters and islets for one renderer's sake; never read a boundary off them. Each feature's
+  `Schematic Change` property and each catalogue description say which councils differ.
 - **Same names, different boundaries.** The Disaster Management Region layer and the official
   QPS regions layer use the same seven region names as their match values (Brisbane, Central,
   Far North, ...). Binding a region slicer to the wrong layer produces a plausible map with the
