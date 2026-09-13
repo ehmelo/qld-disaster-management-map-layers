@@ -60,6 +60,8 @@
   const info = document.getElementById('info');
   let current = null, currentBtn = null;
   const abs = p => new URL(p, location.href).href;
+  const ESC_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+  const esc = v => String(v).replace(/[&<>"]/g, c => ESC_MAP[c]);
 
   for (const [key, title] of Object.entries(groups)) {
     const items = catalogue.layers.filter(l => l.group === key);
@@ -67,7 +69,7 @@
     const h = document.createElement('h2'); h.textContent = title; nav.appendChild(h);
     for (const l of items) {
       const b = document.createElement('button');
-      b.innerHTML = `${l.title}<small>${l.features} features · ${l.geojson_kb} KB GeoJSON · ${l.topojson_kb} KB TopoJSON</small>`;
+      b.innerHTML = `${esc(l.title)}<small>${l.features} features · ${l.geojson_kb} KB GeoJSON · ${l.topojson_kb} KB TopoJSON</small>`;
       b.onclick = () => show(l, b);
       nav.appendChild(b);
     }
@@ -82,8 +84,8 @@
     current = L.geoJSON(data, {
       style: () => ({ color: '#333', weight: 1, fillColor: palette[i++ % palette.length], fillOpacity: .45 }),
       onEachFeature: (f, layer) => {
-        const meta = new Set(['Note','Layer Id','Layer Group','Layer Kind','Source','Source URL','Licence','Licence URL','Dataset Date','Simplification Tolerance M','Coordinate Precision Decimals','CRS','Generated']);
-        const rows = Object.entries(f.properties).filter(([k]) => !meta.has(k)).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>') + (f.id !== undefined ? `<br><b>id</b>: ${f.id}` : '');
+        const meta = new Set(['Note','Layer Id','Layer Group','Layer Kind','Source','Source URL','Licence','Licence URL','Dataset Date','Simplification Tolerance M','Coordinate Precision Decimals','CRS','Modified']);
+        const rows = Object.entries(f.properties).filter(([k]) => !meta.has(k)).map(([k, v]) => `<b>${esc(k)}</b>: ${esc(v)}`).join('<br>') + (f.id !== undefined ? `<br><b>id</b>: ${esc(f.id)}` : '');
         layer.bindTooltip(rows, { sticky: true });
         layer.on('mouseover', () => layer.setStyle({ weight: 2.5, fillOpacity: .65 }));
         layer.on('mouseout', () => current.resetStyle(layer));
@@ -91,16 +93,16 @@
     }).addTo(map);
     map.fitBounds(current.getBounds(), { padding: [20, 20] });
     info.hidden = false;
-    info.innerHTML = `<h3>${l.title}</h3><p>${l.description}</p>
+    info.innerHTML = `<h3>${esc(l.title)}</h3><p>${esc(l.description)}</p>
       <a href="${l.geojson}" download>Download GeoJSON</a><a href="${l.topojson}" download>Download TopoJSON</a>
       <div class="url">${abs(l.geojson)}</div>
       <button data-copy="${abs(l.geojson)}">Copy GeoJSON URL</button><button data-copy="${abs(l.topojson)}">Copy TopoJSON URL</button>
       <p style="margin-top:6px">Paste the URL into Azure Maps (Reference layer) or Shape Map (Map settings &gt; Type &gt; URL).</p>
       <table>
-        <tr><td>Match field</td><td><code>${l.match_field}</code></td></tr>
-        <tr><td>Coordinates</td><td>${l.crs}</td></tr>
-        <tr><td>Source</td><td>${l.source}</td></tr>
-        <tr><td>Licence</td><td>${l.licence}</td></tr>
+        <tr><td>Match field</td><td><code>${esc(l.match_field)}</code></td></tr>
+        <tr><td>Coordinates</td><td>${esc(l.crs)}</td></tr>
+        <tr><td>Source</td><td>${esc(l.source)}</td></tr>
+        <tr><td>Licence</td><td>${esc(l.licence)}</td></tr>
       </table>`;
   }
 
