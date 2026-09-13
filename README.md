@@ -2,8 +2,15 @@
 
 Boundary files for Queensland's disaster management geography, prepared for the Power BI
 **Azure Maps** visual (GeoJSON reference layer) and the **Shape Map** visual (TopoJSON).
-Every layer is simplified, cleaned of overlaps between neighbouring shapes, and served from
-GitHub Pages so it can be referenced by URL.
+Every layer is served from GitHub Pages so it can be referenced by URL.
+
+> **Reduced size and precision, on purpose.** These files are compacted for state-level and
+> regional views: shapes are simplified with a 200 m tolerance (no point moves further than
+> about 200 m from the source line) and coordinates are rounded to 4 decimal places (about
+> 11 m). Boundaries are right at the scale of a Queensland dashboard, where one screen pixel is
+> about 2 km, and neighbours share edges with no gaps or overlaps. They are **not** for pinpoint
+> locations, address lookups, property-level or legal boundary work: use the source datasets
+> listed below for those.
 
 **Preview the layers:** https://ehmelo.github.io/qld-disaster-management-map-layers/
 
@@ -45,29 +52,31 @@ Local government areas take the region of the disaster district they sit in.
 
 ## Layers
 
-All coordinates are longitude / latitude in degrees. `simp20` and `simp10` mean the shapes
-were simplified to 20 % or 10 % of the source vertex count, which is ample for statewide and
-regional maps and keeps files small. Coordinates are rounded to 5 decimal places (about 1 m).
+All coordinates are longitude / latitude in degrees. `simp200m` in a file name is the
+simplification tolerance described above. All polygons of a layer are simplified together with
+shared edges, so every district and council keeps its area to within about 2 % of the source
+(the smallest councils, around 10 km², move the most) and the coastline is drawn the same way
+on every layer.
 
 The disaster district and council polygons extend over Queensland's coastal waters, as the
 source datasets draw them: disaster management areas cover the state's maritime territory,
 so a coastal council or district is larger than its land area. One repair was needed: the
-Cook Shire polygon in the source pipeline had lost its western coastal land when a Gulf of
-Carpentaria extension was removed; that land is restored here from the raw shapefile, clipped
-to the Australian Bureau of Statistics 2021 coastline.
+Cook Shire polygon carried a Gulf of Carpentaria water box that, when removed upstream, took
+the shire's western coastal land with it; here the box is removed and the land kept, using
+the Australian Bureau of Statistics 2021 coastline.
 
 ### Statewide
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_ddmg_boundaries_gda2020_simp20` | 23 | 643 KB | 154 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp20` | 78 | 1460 KB | 337 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 418 KB | 116 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 765 KB | 210 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Disaster Management Regions
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_dm_region_boundaries_gda2020_simp20` | 7 | 373 KB | 102 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
+| `qld_dm_region_boundaries_gda2020_simp200m` | 7 | 246 KB | 78 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
 
 ### Per region
 
@@ -77,32 +86,32 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_brisbane_ddmg_boundaries_gda2020_simp20` | 2 | 28 KB | 12 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_brisbane_ldmg_boundaries_gda2020_simp20` | 3 | 34 KB | 15 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ddmg_boundaries_gda2020_simp20` | 4 | 161 KB | 48 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp20` | 14 | 339 KB | 89 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ddmg_boundaries_gda2020_simp20` | 3 | 120 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp20` | 21 | 441 KB | 119 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ddmg_boundaries_gda2020_simp20` | 4 | 80 KB | 28 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp20` | 8 | 135 KB | 44 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ddmg_boundaries_gda2020_simp20` | 2 | 76 KB | 32 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp20` | 16 | 248 KB | 76 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ddmg_boundaries_gda2020_simp20` | 2 | 23 KB | 10 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ldmg_boundaries_gda2020_simp20` | 3 | 35 KB | 14 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ddmg_boundaries_gda2020_simp20` | 6 | 158 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ldmg_boundaries_gda2020_simp20` | 13 | 237 KB | 76 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ddmg_boundaries_gda2020_simp200m` | 2 | 15 KB | 8 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ldmg_boundaries_gda2020_simp200m` | 3 | 17 KB | 9 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 111 KB | 38 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 186 KB | 58 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 80 KB | 31 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 221 KB | 73 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 50 KB | 21 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 70 KB | 27 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 55 KB | 26 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 134 KB | 48 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 13 KB | 7 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 17 KB | 8 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 97 KB | 38 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 130 KB | 48 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Official QPS boundaries (for comparison)
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_qps_regions_gda94_simp10` | 7 | 142 KB | 42 KB | `QPS Region` | GDA94 (EPSG:4283) |
-| `qld_qps_districts_gda94_simp10` | 15 | 204 KB | 57 KB | `QPS District` | GDA94 (EPSG:4283) |
+| `qld_qps_regions_gda94_simp200m` | 7 | 233 KB | 71 KB | `QPS Region` | GDA94 (EPSG:4283) |
+| `qld_qps_districts_gda94_simp200m` | 15 | 306 KB | 88 KB | `QPS District` | GDA94 (EPSG:4283) |
 
 ## Using a layer in Power BI
 
 **Azure Maps visual.** Format pane > Reference layer > paste the GeoJSON URL
-(for example `https://ehmelo.github.io/qld-disaster-management-map-layers/layers/qld_ddmg_boundaries_gda2020_simp20.geojson`), or upload the file.
+(for example `https://ehmelo.github.io/qld-disaster-management-map-layers/layers/qld_ddmg_boundaries_gda2020_simp200m.geojson`), or upload the file.
 Put the data column that matches the layer's *match field* in the **Location** well; values
 must match the property exactly, including case. Colour the shapes with a measure in the
 **Color** well or through conditional formatting on the polygon fill.
@@ -137,8 +146,9 @@ The viewer page and any code in this repository are under the MIT licence (`LICE
   QPS layers if you need police regions.
 - **Dataset dates.** The QPS Regions and Districts files are dated March 2022; check the
   source pages before relying on any boundary for an operational decision.
-- **Simplification.** Shapes are generalised. They are right for thematic maps at state and
-  regional scale, not for property-level work.
+- **Simplification.** Shapes are generalised to a 200 m tolerance and 11 m coordinate
+  rounding. Right for thematic maps at state and regional scale; wrong for anything that needs
+  a precise line, including whether a given address falls inside a boundary.
 - **Datums.** Disaster district and council layers are GDA2020; the QPS layers are GDA94.
   The difference is under 2 m and irrelevant at these scales.
 
