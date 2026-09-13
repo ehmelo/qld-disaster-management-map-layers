@@ -60,7 +60,7 @@
    "id": "qld_dm_region_boundaries_gda2020_simp200m",
    "group": "region",
    "title": "Disaster Management Regions",
-   "description": "The 23 disaster districts merged into the 7 Disaster Management Regions they report to. Disaster Management Region: the reporting grouping of disaster districts used by the consuming reports. Not the QPS operational region boundary - see qld_qps_regions_gda94_simp10.",
+   "description": "The 23 disaster districts merged into the 7 Disaster Management Regions they report to. Disaster Management Region: the reporting grouping of disaster districts used by the consuming reports. Not the QPS operational region boundary - see qld_qps_regions_gda94_simp200m.",
    "source": "QPS Disaster Districts, data.qld.gov.au (Queensland Police Service) (derived)",
    "licence": "CC BY 4.0",
    "crs": "GDA2020 (EPSG:7844)",
