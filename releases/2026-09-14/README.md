@@ -109,6 +109,27 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 | `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 101 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 140 KB | 74 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
+### Schematic council layers (Power BI Azure Maps)
+
+Built for the Power BI Azure Maps visual, which cannot render a council enclosed by another
+council (the Cape York enclaves produced phantom triangles) and fills polygons at 50 % opacity
+with no control. In these files Cook Shire's coastal waters are assigned to the nearest council
+and small enclave fragments are merged into the council around them, so no council on Cape York
+is enclosed by another. **Indicative only**: boundaries at sea and on Cape York do not follow the
+source datasets. Use them for the Azure Maps council map and nothing else; every feature carries
+`Fidelity` = "schematic…" so the two kinds cannot be confused.
+
+| Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
+|---|---|---|---|---|---|
+| `qld_ldmg_boundaries_gda2020_simp200m_schematic` | 78 | 893 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 19 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m_schematic` | 14 | 195 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m_schematic` | 21 | 293 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m_schematic` | 8 | 76 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m_schematic` | 16 | 151 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 20 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp200m_schematic` | 13 | 140 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+
 ### Official QPS boundaries (for comparison)
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
@@ -139,6 +160,9 @@ grouping, the source datasets, and the URL pattern.
 Put the data column that matches the layer's *match field* in the **Location** well; values
 must match the property exactly, including case. Colour the shapes with a measure in the
 **Color** well or through conditional formatting on the polygon fill.
+
+**Which council file.** Azure Maps council map: the `…_schematic` file (see above). Shape Map
+and every other consumer: the standard file.
 
 **Shape Map visual.** Format pane > Map settings > Type > **URL**, then paste the TopoJSON
 or GeoJSON URL, or press **Fx** and point it at a measure that returns the URL. The measure
@@ -195,6 +219,8 @@ statement and the per-feature `Modified` property are the change indication CC B
   The difference is under 2 m and irrelevant at these scales. The `crs` member inside the
   GeoJSON files records the source datum for reference only: Power BI, Azure Maps and Leaflet
   ignore it and read the coordinates as WGS84, which is the same thing at this precision.
+- **Schematic layers are not boundaries.** The `…_schematic` council files reassign Cook Shire's
+  waters and merge enclave fragments for one renderer's sake; never read a boundary off them.
 - **Same names, different boundaries.** The Disaster Management Region layer and the official
   QPS regions layer use the same seven region names as their match values (Brisbane, Central,
   Far North, ...). Binding a region slicer to the wrong layer produces a plausible map with the
