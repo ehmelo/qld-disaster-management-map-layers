@@ -91,7 +91,7 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 | `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 111 KB | 38 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 186 KB | 58 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 80 KB | 31 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 221 KB | 73 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 220 KB | 73 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 50 KB | 21 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 70 KB | 27 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 55 KB | 26 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
