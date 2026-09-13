@@ -176,7 +176,13 @@ The viewer page and any code in this repository are under the MIT licence (`LICE
   council area falls outside any district statewide). None of this is visible at the intended
   scale; do not use these files to decide which side of a boundary a location falls on.
 - **Datums.** Disaster district and council layers are GDA2020; the QPS layers are GDA94.
-  The difference is under 2 m and irrelevant at these scales.
+  The difference is under 2 m and irrelevant at these scales. The `crs` member inside the
+  GeoJSON files records the source datum for reference only: Power BI, Azure Maps and Leaflet
+  ignore it and read the coordinates as WGS84, which is the same thing at this precision.
+- **Same names, different boundaries.** The Disaster Management Region layer and the official
+  QPS regions layer use the same seven region names as their match values (Brisbane, Central,
+  Far North, ...). Binding a region slicer to the wrong layer produces a plausible map with the
+  wrong boundary and no error. Check the layer id in the visual before trusting a region map.
 
 ## Reporting a problem
 
