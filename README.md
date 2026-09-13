@@ -75,7 +75,7 @@ the Australian Bureau of Statistics 2021 coastline.
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
 | `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 438 KB | 178 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 858 KB | 365 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 857 KB | 365 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 The council match field `LDMG Name` is not unique: Torres Strait covers two councils (LGA codes
 6950 and 6960); bind on `LGA Code` when a one-to-one key is needed.
@@ -99,13 +99,13 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 | `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 114 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 197 KB | 89 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 82 KB | 44 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 256 KB | 125 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 256 KB | 124 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 52 KB | 30 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 77 KB | 41 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 76 KB | 41 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 59 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 151 KB | 79 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 14 KB | 10 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 20 KB | 13 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 19 KB | 12 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 101 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 140 KB | 74 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
