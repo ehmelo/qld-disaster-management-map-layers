@@ -82,7 +82,8 @@
     current = L.geoJSON(data, {
       style: () => ({ color: '#333', weight: 1, fillColor: palette[i++ % palette.length], fillOpacity: .45 }),
       onEachFeature: (f, layer) => {
-        const rows = Object.entries(f.properties).filter(([k]) => k !== 'Note').map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>');
+        const meta = new Set(['Note','Layer Id','Layer Group','Layer Kind','Source','Source URL','Licence','Licence URL','Dataset Date','Simplification Tolerance M','Coordinate Precision Decimals','CRS','Generated']);
+        const rows = Object.entries(f.properties).filter(([k]) => !meta.has(k)).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>') + (f.id !== undefined ? `<br><b>id</b>: ${f.id}` : '');
         layer.bindTooltip(rows, { sticky: true });
         layer.on('mouseover', () => layer.setStyle({ weight: 2.5, fillOpacity: .65 }));
         layer.on('mouseout', () => current.resetStyle(layer));

@@ -38,17 +38,20 @@ Queensland Police Service's own operational boundaries.
 
 ### Disaster Management Region grouping
 
-| Disaster Management Region | Code | Short name | Disaster districts (DDMG) |
-|---|---|---|---|
-| Brisbane Region | `BR` | Brisbane | Brisbane, Moreton |
-| Central Region | `CR` | Central | Gladstone, Longreach, Mackay, Rockhampton |
-| Far Northern Region | `FNR` | Far North | Cairns, Innisfail, Mareeba |
-| North Coast Region | `NCR` | North Coast | Bundaberg, Gympie, Maryborough, Sunshine Coast |
-| Northern Region | `NR` | Northern | Mount Isa, Townsville |
-| South Eastern Region | `SER` | South East | Gold Coast, Logan |
-| Southern Region | `SR` | Southern | Charleville, Dalby, Ipswich, Roma, Toowoomba, Warwick |
+| Disaster Management Region | Code | Short name | Region slug (file name) | Disaster districts (DDMG) |
+|---|---|---|---|---|
+| Brisbane Region | `BR` | Brisbane | `brisbane` | Brisbane, Moreton |
+| Central Region | `CR` | Central | `central` | Gladstone, Longreach, Mackay, Rockhampton |
+| Far Northern Region | `FNR` | Far North | `far_north` | Cairns, Innisfail, Mareeba |
+| North Coast Region | `NCR` | North Coast | `north_coast` | Bundaberg, Gympie, Maryborough, Sunshine Coast |
+| Northern Region | `NR` | Northern | `northern` | Mount Isa, Townsville |
+| South Eastern Region | `SER` | South East | `south_east` | Gold Coast, Logan |
+| Southern Region | `SR` | Southern | `southern` | Charleville, Dalby, Ipswich, Roma, Toowoomba, Warwick |
 
-Local government areas take the region of the disaster district they sit in.
+Local government areas take the region of the disaster district they sit in. The **region slug**
+is the short name in lower case with spaces as underscores; it is the `<region>` part of every
+per-region file name, so a report can build the URL from the region it is showing without a
+lookup table: `layers/qld_<slug>_ldmg_boundaries_gda2020_simp200m.geojson`.
 
 ## Layers
 
@@ -69,14 +72,14 @@ the Australian Bureau of Statistics 2021 coastline.
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 418 KB | 116 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 765 KB | 210 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 432 KB | 131 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 826 KB | 271 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Disaster Management Regions
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_dm_region_boundaries_gda2020_simp200m` | 7 | 246 KB | 78 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
+| `qld_dm_region_boundaries_gda2020_simp200m` | 7 | 250 KB | 81 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
 
 ### Per region
 
@@ -86,27 +89,43 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_brisbane_ddmg_boundaries_gda2020_simp200m` | 2 | 15 KB | 8 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_brisbane_ldmg_boundaries_gda2020_simp200m` | 3 | 17 KB | 9 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 111 KB | 38 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 186 KB | 58 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 80 KB | 31 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 220 KB | 73 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 50 KB | 21 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 70 KB | 27 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 55 KB | 26 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 134 KB | 48 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 13 KB | 7 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 17 KB | 8 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 97 KB | 38 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 130 KB | 48 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ddmg_boundaries_gda2020_simp200m` | 2 | 16 KB | 9 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ldmg_boundaries_gda2020_simp200m` | 3 | 19 KB | 11 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 113 KB | 41 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 195 KB | 68 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 82 KB | 33 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 235 KB | 88 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 52 KB | 23 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 76 KB | 33 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 56 KB | 27 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 145 KB | 59 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 14 KB | 8 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 19 KB | 10 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 100 KB | 42 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 139 KB | 57 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Official QPS boundaries (for comparison)
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_qps_regions_gda94_simp200m` | 7 | 233 KB | 71 KB | `QPS Region` | GDA94 (EPSG:4283) |
-| `qld_qps_districts_gda94_simp200m` | 15 | 306 KB | 88 KB | `QPS District` | GDA94 (EPSG:4283) |
+| `qld_qps_regions_gda94_simp200m` | 7 | 236 KB | 74 KB | `QPS Region` | GDA94 (EPSG:4283) |
+| `qld_qps_districts_gda94_simp200m` | 15 | 313 KB | 95 KB | `QPS District` | GDA94 (EPSG:4283) |
+
+## Metadata in the files
+
+Every feature in every layer carries, besides its own attributes (district or council names and
+codes), the same set of metadata properties so a file can be used, filtered and cited on its own:
+`Layer Id`, `Layer Group`, `Layer Kind`, `Source`, `Source URL`, `Licence`, `Licence URL`,
+`Dataset Date`, `Simplification Tolerance M`, `Coordinate Precision Decimals`, `CRS`, `Generated`.
+Disaster district, council and region features also carry `Police Region Name`,
+`Police Region Code`, `Police Region Short Name` and `Region Slug`, so the statewide files can be
+filtered to a region without the per-region files. Every feature has a stable `id`: the district
+name, the council's LGA code, the region code, the QPS region name or the QPS district id.
+
+[`layers.json`](layers.json) is the machine-readable catalogue: for each layer its ids, URLs,
+sizes, SHA-256 hashes, feature count, bounding box, property list, match field, source, licence
+and dataset date; plus the region list with slugs and layer names, the district-to-region
+grouping, the source datasets, and the URL pattern.
 
 ## Using a layer in Power BI
 
