@@ -61,7 +61,7 @@ to the Australian Bureau of Statistics 2021 coastline.
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
 | `qld_ddmg_boundaries_gda2020_simp20` | 23 | 643 KB | 154 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp20` | 78 | 1595 KB | 357 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp20` | 78 | 1460 KB | 337 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Disaster Management Regions
 
@@ -78,19 +78,19 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
 | `qld_brisbane_ddmg_boundaries_gda2020_simp20` | 2 | 28 KB | 12 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_brisbane_ldmg_boundaries_gda2020_simp20` | 3 | 40 KB | 17 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_brisbane_ldmg_boundaries_gda2020_simp20` | 3 | 34 KB | 15 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_central_ddmg_boundaries_gda2020_simp20` | 4 | 161 KB | 48 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp20` | 14 | 317 KB | 83 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp20` | 14 | 339 KB | 89 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_far_north_ddmg_boundaries_gda2020_simp20` | 3 | 120 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp20` | 21 | 603 KB | 151 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp20` | 21 | 441 KB | 119 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_north_coast_ddmg_boundaries_gda2020_simp20` | 4 | 80 KB | 28 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp20` | 8 | 139 KB | 44 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp20` | 8 | 135 KB | 44 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_northern_ddmg_boundaries_gda2020_simp20` | 2 | 76 KB | 32 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp20` | 16 | 228 KB | 69 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp20` | 16 | 248 KB | 76 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_south_east_ddmg_boundaries_gda2020_simp20` | 2 | 23 KB | 10 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ldmg_boundaries_gda2020_simp20` | 3 | 39 KB | 15 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp20` | 3 | 35 KB | 14 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_southern_ddmg_boundaries_gda2020_simp20` | 6 | 158 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ldmg_boundaries_gda2020_simp20` | 13 | 238 KB | 77 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp20` | 13 | 237 KB | 76 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Official QPS boundaries (for comparison)
 

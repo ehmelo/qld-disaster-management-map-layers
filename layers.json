@@ -38,15 +38,15 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 1595,
-   "topojson_kb": 357,
+   "geojson_kb": 1460,
+   "topojson_kb": 337,
    "features": 78,
-   "vertices": 73985,
+   "vertices": 67884,
    "bbox": [
     137.99465,
-    -29.17925,
+    -29.17922,
     153.55195,
-    -9.08813
+    -9.08802
    ],
    "properties": [
     "LGA Code",
@@ -126,15 +126,15 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_brisbane_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_brisbane_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 40,
-   "topojson_kb": 17,
+   "geojson_kb": 34,
+   "topojson_kb": 15,
    "features": 3,
-   "vertices": 1813,
+   "vertices": 1542,
    "bbox": [
-    152.65127,
+    152.65178,
     -27.74375,
-    153.54637,
-    -26.79235
+    153.54636,
+    -26.79226
    ],
    "properties": [
     "LGA Code",
@@ -187,10 +187,10 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_central_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_central_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 317,
-   "topojson_kb": 83,
+   "geojson_kb": 339,
+   "topojson_kb": 89,
    "features": 14,
-   "vertices": 14710,
+   "vertices": 15719,
    "bbox": [
     140.67789,
     -26.92686,
@@ -248,15 +248,15 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_far_north_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_far_north_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 603,
-   "topojson_kb": 151,
+   "geojson_kb": 441,
+   "topojson_kb": 119,
    "features": 21,
-   "vertices": 27795,
+   "vertices": 20440,
    "bbox": [
     141.00112,
     -19.69644,
     147.59941,
-    -9.08813
+    -9.08802
    ],
    "properties": [
     "LGA Code",
@@ -309,14 +309,14 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_north_coast_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_north_coast_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 139,
+   "geojson_kb": 135,
    "topojson_kb": 44,
    "features": 8,
-   "vertices": 6395,
+   "vertices": 6238,
    "bbox": [
     150.36913,
     -26.98477,
-    153.36034,
+    153.358,
     -24.39207
    ],
    "properties": [
@@ -370,10 +370,10 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_northern_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_northern_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 228,
-   "topojson_kb": 69,
+   "geojson_kb": 248,
+   "topojson_kb": 76,
    "features": 16,
-   "vertices": 10489,
+   "vertices": 11395,
    "bbox": [
     137.99465,
     -25.99685,
@@ -431,15 +431,15 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_south_east_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_south_east_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 39,
-   "topojson_kb": 15,
+   "geojson_kb": 35,
+   "topojson_kb": 14,
    "features": 3,
-   "vertices": 1773,
+   "vertices": 1614,
    "bbox": [
-    152.37501,
+    152.3749,
     -28.36387,
     153.55195,
-    -27.58721
+    -27.58742
    ],
    "properties": [
     "LGA Code",
@@ -492,15 +492,15 @@
    "match_field": "LDMG Name",
    "geojson": "layers/qld_southern_ldmg_boundaries_gda2020_simp20.geojson",
    "topojson": "layers/qld_southern_ldmg_boundaries_gda2020_simp20.topojson",
-   "geojson_kb": 238,
-   "topojson_kb": 77,
+   "geojson_kb": 237,
+   "topojson_kb": 76,
    "features": 13,
-   "vertices": 11010,
+   "vertices": 10936,
    "bbox": [
     140.99927,
-    -29.17925,
+    -29.17922,
     152.94089,
-    -24.63593
+    -24.64894
    ],
    "properties": [
     "LGA Code",
