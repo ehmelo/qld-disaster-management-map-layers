@@ -74,8 +74,8 @@ the Australian Bureau of Statistics 2021 coastline.
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 438 KB | 178 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 857 KB | 365 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ddmg_boundaries_gda2020_simp200m` | 23 | 439 KB | 179 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m` | 78 | 861 KB | 369 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 The council match field `LDMG Name` is not unique: Torres Strait covers two councils (LGA codes
 6950 and 6960); bind on `LGA Code` when a one-to-one key is needed.
@@ -84,7 +84,7 @@ The council match field `LDMG Name` is not unique: Torres Strait covers two coun
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_dm_region_boundaries_gda2020_simp200m` | 7 | 254 KB | 112 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
+| `qld_dm_region_boundaries_gda2020_simp200m` | 7 | 254 KB | 113 KB | `Police Region Short Name` | GDA2020 (EPSG:7844) |
 
 ### Per region
 
@@ -97,15 +97,15 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 | `qld_brisbane_ddmg_boundaries_gda2020_simp200m` | 2 | 16 KB | 12 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_brisbane_ldmg_boundaries_gda2020_simp200m` | 3 | 19 KB | 14 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_central_ddmg_boundaries_gda2020_simp200m` | 4 | 114 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 197 KB | 89 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m` | 14 | 197 KB | 90 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_far_north_ddmg_boundaries_gda2020_simp200m` | 3 | 82 KB | 44 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 256 KB | 124 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 52 KB | 30 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 76 KB | 41 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 59 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 151 KB | 79 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 14 KB | 10 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 19 KB | 12 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m` | 21 | 257 KB | 125 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ddmg_boundaries_gda2020_simp200m` | 4 | 53 KB | 30 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m` | 8 | 77 KB | 42 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ddmg_boundaries_gda2020_simp200m` | 2 | 60 KB | 39 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m` | 16 | 152 KB | 80 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ddmg_boundaries_gda2020_simp200m` | 2 | 15 KB | 10 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_south_east_ldmg_boundaries_gda2020_simp200m` | 3 | 20 KB | 13 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_southern_ddmg_boundaries_gda2020_simp200m` | 6 | 101 KB | 55 KB | `DDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_southern_ldmg_boundaries_gda2020_simp200m` | 13 | 140 KB | 74 KB | `LDMG Name` | GDA2020 (EPSG:7844) |
 
@@ -121,21 +121,21 @@ source datasets. Use them for the Azure Maps council map and nothing else; every
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_ldmg_boundaries_gda2020_simp200m_schematic` | 78 | 893 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_ldmg_boundaries_gda2020_simp200m_schematic` | 78 | 904 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_brisbane_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 19 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_central_ldmg_boundaries_gda2020_simp200m_schematic` | 14 | 195 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_far_north_ldmg_boundaries_gda2020_simp200m_schematic` | 21 | 293 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_north_coast_ldmg_boundaries_gda2020_simp200m_schematic` | 8 | 76 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_northern_ldmg_boundaries_gda2020_simp200m_schematic` | 16 | 151 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_central_ldmg_boundaries_gda2020_simp200m_schematic` | 14 | 197 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_far_north_ldmg_boundaries_gda2020_simp200m_schematic` | 21 | 296 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_north_coast_ldmg_boundaries_gda2020_simp200m_schematic` | 8 | 78 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_northern_ldmg_boundaries_gda2020_simp200m_schematic` | 16 | 154 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
 | `qld_south_east_ldmg_boundaries_gda2020_simp200m_schematic` | 3 | 20 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
-| `qld_southern_ldmg_boundaries_gda2020_simp200m_schematic` | 13 | 140 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
+| `qld_southern_ldmg_boundaries_gda2020_simp200m_schematic` | 13 | 142 KB | none (GeoJSON only) | `LDMG Name` | GDA2020 (EPSG:7844) |
 
 ### Official QPS boundaries (for comparison)
 
 | Layer | Features | GeoJSON | TopoJSON | Match field | Coordinates |
 |---|---|---|---|---|---|
-| `qld_qps_regions_gda94_simp200m` | 7 | 236 KB | 101 KB | `QPS Region` | GDA94 (EPSG:4283) |
-| `qld_qps_districts_gda94_simp200m` | 15 | 314 KB | 129 KB | `QPS District` | GDA94 (EPSG:4283) |
+| `qld_qps_regions_gda94_simp200m` | 7 | 237 KB | 101 KB | `QPS Region` | GDA94 (EPSG:4283) |
+| `qld_qps_districts_gda94_simp200m` | 15 | 314 KB | 130 KB | `QPS District` | GDA94 (EPSG:4283) |
 
 ## Metadata in the files
 
