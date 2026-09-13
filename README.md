@@ -150,8 +150,9 @@ The viewer page and any code in this repository are under the MIT licence (`LICE
   rounding. Right for thematic maps at state and regional scale; wrong for anything that needs
   a precise line, including whether a given address falls inside a boundary.
 - **Tolerances between shapes.** Within one layer, neighbouring shapes share their edges and
-  agree to within the coordinate rounding (about 11 m); residual overlaps from validity repair
-  total under 10 m² statewide. Between layers, district and council boundaries come from two
+  agree to within the coordinate rounding (about 11 m); residual hairline overlaps left by the
+  validity repair total about 0.002 km² (2,300 m²) statewide, all on Cook Shire's seams with
+  Aurukun, Pormpuraaw and Torres Shire; the district layer has none. Between layers, district and council boundaries come from two
   different government datasets and disagree by up to about 200 m in places (about 7 km² of
   council area falls outside any district statewide). None of this is visible at the intended
   scale; do not use these files to decide which side of a boundary a location falls on.
