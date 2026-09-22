@@ -113,7 +113,8 @@ statewide layers; each feature also carries `Police Region Name`, `Police Region
 
 Built for the Power BI Azure Maps visual, which cannot render a council enclosed by another
 council (the Cape York enclaves produced phantom triangles) and fills polygons at 50 % opacity
-with no control. In these files Cook Shire's coastal waters are assigned to the nearest council
+with no control in the visual; every feature in these files therefore carries `fill-opacity` 0.72,
+which the visual honours while keeping a data-bound colour. In these files Cook Shire's coastal waters are assigned to the nearest council
 and its islets follow the council whose waters they sit in; every other council keeps its source
 land. Cook Shire's holes fall from 31 to the 12 that other councils occupy, which the visual
 renders cleanly. **Indicative only**: boundaries at sea and on Cape York do not follow the
